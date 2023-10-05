@@ -1,0 +1,114 @@
+{% extends 'commen/home.html' %}
+{% block head %}
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+ .login{
+    margin: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+ }
+ #sello{
+    text-align: center;
+    color: rgb(49, 49, 206);
+    font-size: 40px;
+    font-weight: 800;
+ }
+ #food{
+    background-image: url('../../static/images/chines.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -25px;
+    padding-bottom: 100px;
+    /* width: 1000px; */
+   
+ }
+ h4{
+    text-align: center;
+    color: orangered;
+    font-weight: 700;
+    padding-top: 80px;
+    font-size: 40px;
+ }
+ .other{
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    /* margin-left: 100px; */
+ }
+ .form{
+  /* color: white; */
+  width: 900px;
+  margin-left: 200px;
+  font-weight: 500;
+  font-size: 20px;
+  background: #fff;
+  padding: 30px 50px 30px 50px;
+
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+   <div id="food">
+    <h4>SIGNUP</h4>
+    <form class="form" method="POST">
+                
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">NAME</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">EMAIL ADDRESS</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">PHONE NUMBER</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">PASSWORD</label>
+            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password">
+          </div>  
+         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">ADDRESS</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">ACCOUNT NUMBER</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="acc_no">
+          </div>
+         
+          <div class="row">
+            <div class="col-6">
+                <label for="exampleInputEmail1" class="form-label">IFSC</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="ifsc">
+              </div> 
+            <div class="col-6">
+                <label for="exampleInputEmail1" class="form-label">BRANCH</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="branch">
+              </div>
+          </div>
+         
+         
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+         
+        <button type="submit" class="btn btn-primary">Register</button>
+        <br>
+        {% csrf_token %}
+
+        {{ status }} 
+      
+    </form>
+   </div>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'commen/home.html' %}
+{% block head %}
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+ .login{
+    margin: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+ }
+ #sello{
+    text-align: center;
+    color: rgb(49, 49, 206);
+    font-size: 40px;
+    font-weight: 800;
+ }
+ #food{
+    background-image: url('../../static/images/cockis.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -25px;
+    padding-bottom: 100px;
+    padding-top: 150px;
+    /* width: 1000px; */
+   
+ }
+ h4{
+    text-align: center;
+    color: orangered;
+    font-weight: 700;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    font-size: 40px;
+ }
+ .other{
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    /* margin-left: 100px; */
+ }
+.form{
+  /* color: white; */
+  width: 900px;
+  margin-left: 200px;
+  font-weight: 500;
+  font-size: 20px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 30px 50px 30px 50px;
+  
+
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+   <div id="food">
+   
+    <form class="form" method="POST">
+      <h4>SIGNUP</h4>      
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">NAME</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+            <div id="name" class="form-text" >.</div>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">EMAIL ADDRESS</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+          <div id="email" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">PHONE NUMBER</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone">
+            <div id="phone" class="form-text">.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">PASSWORD</label>
+            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password">
+            <div id="password" class="form-text"></div>
+          </div>  
+         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">ADDRESS</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
+            <div id="address" class="form-text"></div>
+          </div>
+         
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+        <a href="{% url 'master:dash' %}">
+        <button type="submit" class="btn btn-primary">Register</button>
+        </a>         
+      
+    </form>
+   </div>
+
+{% endblock %}

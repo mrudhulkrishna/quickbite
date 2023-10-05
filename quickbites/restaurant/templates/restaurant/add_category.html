@@ -1,0 +1,94 @@
+{% extends 'restaurant/home.html' %}
+
+{% block head %}
+
+<style>
+  .card {
+    margin-left: 27px;
+    margin-top: 40px;
+  }
+
+  #button {
+    margin-left: 480px;
+  }
+
+  h2 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: rgb(66, 150, 245);
+  }
+</style>
+
+{% endblock %}
+
+{% block sidebar %}
+
+</div>
+</div>
+<div class="navbar-nav w-100">
+  <a href="{% url 'restaurant:home' %}" class="nav-item nav-link "><i class="fa fa-home me-2"></i>Home</a>
+  <a href="{% url 'restaurant:orders' %}" class="nav-item nav-link"><i class="fas fa-concierge-bell me-2"></i>Orders</a>
+  <a href="{% url 'restaurant:add_category' %}" class="nav-item nav-link active"><i class="fa fa-list me-2"></i>Add
+    Category</a>
+  <a href="{% url 'restaurant:view_category' %}" class="nav-item nav-link"><i class="fa fa-eye me-2"></i>View
+    Category</a>
+  <a href="{% url 'restaurant:add_menu' %}" class="nav-item nav-link"><i class="fa fa-cutlery me-2"></i>Add Menu</a>
+  <a href="{% url 'restaurant:view_menu' %}" class="nav-item nav-link"><i class="fa fa-coffee me-2"></i>View Menu</a>
+  <a href="widget.html" class="nav-item nav-link"><i class="fa fa-money me-2"></i>Earnings</a>
+
+  <div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-gears"></i>Settings</a>
+    <div class="dropdown-menu bg-transparent border-0">
+      <a href="signin.html" class="dropdown-item">Sign In</a>
+      <a href="signup.html" class="dropdown-item">Sign Up</a>
+
+    </div>
+  </div>
+</div>
+</nav>
+</div>
+<!-- Sidebar End -->
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="card" style="width: 66rem;">
+  <div class="card-body">
+
+    <h2>ADD CATEGORY</h2>
+    <form class="stock" method="POST">
+      <div class="row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">
+          <h5>CATEGORY NAME</h5>
+        </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-lg" id="colFormLabelLg" placeholder="category"
+            name="cat_name">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">
+          <h5>DISCRIPTION</h5>
+        </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-lg" id="colFormLabelLg" placeholder="discription"
+            name="discription">
+        </div>
+      </div>
+      <br>
+
+      <button type="submit" class="btn btn-primary" id="button">Update</button>
+      <br>
+      {% csrf_token %}
+
+      {{ status }}
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

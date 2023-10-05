@@ -1,0 +1,75 @@
+{% extends 'commen/home.html' %}
+{% block head %}
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+ .login{
+    margin: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+ }
+ #sello{
+    text-align: center;
+    color: rgb(49, 49, 206);
+    font-size: 40px;
+    font-weight: 800;
+ }
+ #food{
+    background-image: url('../../static/images/piza.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100px; */
+    width: 750px;
+    margin-right: -250px;
+    padding: 0;
+    margin-left: -100px;
+    margin-top: -25px;
+    margin-bottom: -124px;
+    height: 600px;
+ }
+ h4{
+    text-align: center;
+    color: rgb(43, 43, 238);
+    font-weight: 700;
+    padding-top: 80px;
+    font-size: 40px;
+ }
+ .other{
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    /* margin-left: 100px; */
+ }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login">
+    <div id="food"></div>
+    <div>
+     <h4>LOGIN</h4>
+     <form method="POST">
+         <div class="mb-3">
+           <label for="exampleInputEmail1" class="form-label">Email address</label>
+           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+         </div>
+         <div class="mb-3">
+           <label for="exampleInputPassword1" class="form-label">Password</label>
+           <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+         </div>
+         <div class="mb-3 form-check">
+           <input type="checkbox" class="form-check-input" id="exampleCheck1">
+           <label class="form-check-label" for="exampleCheck1">Remember me</label>
+         </div>
+         <button type="submit" class="btn btn-primary other">Login</button>
+         <br>
+         {% csrf_token %}
+
+         {{ status }} 
+       </form>
+    </div>
+ </div>
+{% endblock %}

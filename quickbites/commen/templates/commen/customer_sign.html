@@ -1,0 +1,127 @@
+{% extends 'commen/home.html' %}
+{% block head %}
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+ .login{
+    margin: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+ }
+ #sello{
+    text-align: center;
+    color: rgb(49, 49, 206);
+    font-size: 40px;
+    font-weight: 800;
+ }
+ #food{
+    background-image:url('../../static/images/piza.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -25px;
+    padding-bottom: 100px;
+    padding-top: 150px;
+    /* width: 1000px; */
+   
+ }
+
+ h4{
+    text-align: center;
+    color: orangered;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    font-size: 40px;
+ }
+ .other{
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    /* margin-left: 100px; */
+ }
+.form{
+  /* color: white; */
+  width: 900px;
+  margin-left: 200px;
+  font-weight: 500;
+  font-size: 20px;
+  background: #fff;
+  padding: 30px 50px 30px 50px;
+
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+   <div id="food">
+   
+    <form class="row g-3 form" id="sign" method="POST">
+
+      <h4>SIGN UP</h4>
+
+      <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="inputfirst" name="first">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Lastname</label>
+          <input type="text" class="form-control" id="inputlast" name="last">
+        </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" name="email">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="password">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="address2">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" name="city">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select" name="state">
+          <option value="kl" selected>Kerala</option>
+          <option value="tn">tamilnamdu</option>
+          <option value="ka">karnadaka</option>
+          <option value="ap">andrapedhesh</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Country</label>
+        <input type="text" class="form-control" id="inputcountry" name="country">
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Remember me
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      <br>
+      {% csrf_token %}
+
+      {{ status }} 
+    </form>
+   </div>
+
+{% endblock %}
